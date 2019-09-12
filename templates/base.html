@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href={% static "/css/css.css" %}>
+    <meta charset="UTF-8">
+    <title>{% block title %} Title {% endblock %}</title>
+</head>
+
+<body id="body">
+<div class="sites-body">
+<a href="/" class="btn btn-default"><button>Idź Domek</button></a>
+
+
+    {% block content %}
+
+
+
+    {% endblock %}
+<div class=sites-footer>
+
+
+        Age of Sigmar Tournament App by Wojciech "Theo" Buda, version: {{ version }}
+
+
+</div>
+</div>
+
+
+</body>
+</html>

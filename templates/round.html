@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Runda {{ round.nr }} {% endblock %}
+
+{% block content %}
+<a href="/tournament/{{ round.tournament_id }}" class="btn btn-default"><button>Turniej</button></a>
+<div class="main-body-div" style="color: gold">Gry w tej rundzie:
+
+    <p><a href="/generate_table/{{ round.id }}" class="btn btn-default"><button>Generuj Stoliki</button></a></p>
+
+{% if games %}
+
+    {% for game in games %}
+        <div><a href="/game/{{ game.id }}" style="color: #FFFFFF">{{ game }}</a></div>
+    {% endfor %}
+
+
+{% endif %}
+    <div>
+
+
+{% endblock %}

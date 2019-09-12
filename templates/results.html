@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Wyniki Turnieju {% endblock %}
+{% block content %}
+<a href="/tournament/{{ tournament.id }}" class="btn btn-default"><button>Turniej</button></a>
+
+    <p class="main-body-div">
+    <ol class="main-body-div" style="color: #FFFFFF">
+        {% for result in results %}
+            <li><a href="/edit_tournament_player/{{ result.id }}" style="color: #FFFFFF">{{ result.player }}</a></li>
+        {% endfor %}
+    </ol>
+
+    </p>
+
+
+
+{% endblock %}

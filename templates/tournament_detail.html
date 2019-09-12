@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main-body-div">
+<h1 style="color: gold">{{ tournament.name }}</h1>
+    </div>
+    <div class="main-body-div">
+    <a href="/results/{{ tournament.id }}" class="btn btn-default"><button>Wyniki Turnieju</button></a>
+</div>
+    {% if rounds %}
+        <h2 style="color: gold">Rundy:</h2>
+    <ul>
+    {% for round in rounds %}
+        <li><a href="/round/{{ round.id }}" style="color: #FFFFFF">runda {{ round.name }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+
+        <div style="color: #FFFFFF">
+        <form method="post">
+            {% csrf_token %}
+        {{ player_form.as_p }}
+        <button type="submit">I cyk do bazy</button>
+        </form>
+        </div>
+    <div>
+
+    {% if tournament_players %}
+        <h2 style="color: gold">Aktualnie w turnieju:</h2>
+    {% for tournament_player in tournament_players %}
+        <div style="overflow: auto"><a href="/edit_tournament_player/{{ tournament_player.id }}" style="color: #FFFFFF">{{ tournament_player }}</div>
+    {% endfor %}
+    {% endif %}
+    </div>
+
+
+
+
+{% endblock %}

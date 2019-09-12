@@ -1,0 +1,8 @@
+<h1>Gracze</h1>
+<ul>
+{% for obj in object_list %}
+    <li><a href="/player/{{ obj.id }}">{{ obj.name }} - {{ obj.nick }}</a></li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

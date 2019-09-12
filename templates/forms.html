@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if round %}
+    <a href="/tournament/{{ round.tournament.id }}" class="btn btn-default"><button>Turniej</button></a>
+    {% endif %}
+
+    {% if tournament_player %}
+    <a href="/tournament/{{ tournament_player.tournament.id }}" class="btn btn-default"><button>Turniej</button></a>
+    {% endif %}
+
+    <div class="main-body-div">
+    {% if players %}
+        <h2>Baza graczy:</h2>
+    <ul>{% for player in players %}
+        <li><a href="/player/{{ player.id }}" style="color: #FFFFFF">{{ player }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if tournaments %}
+        <h2>Istniejące turnieje:</h2>
+    <ul>{% for tournament in tournaments %}
+        <li><a href="/tournament/{{ tournament.id }}" style="color: #FFFFFF">{{ tournament }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if tournament_players %}
+    <ul>{% for player in tournament_players %}
+        <li>{{ player }}</li>
+        {% endfor %}
+    </ul>
+     {% endif %}
+
+    {% if game_players %}
+    <ul>{% for player in game_players %}
+        <li>{{ player }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if tournament_player %}
+        <h1 style="color: #FFFFFF">{{ tournament_player }}</h1>
+    {% endif %}
+
+    {{ form.errors }}
+    <form method="post" style="color: #FFFFFF">
+    <table style="margin-left: auto; margin-right: auto" >
+    {{ form.as_table }}
+    {% csrf_token %}
+
+        </table>
+
+    <div class="main-body-div"><input type="submit" value="i cyk do bazy"></div>
+
+    </form>
+    </div>
+{% endblock %}

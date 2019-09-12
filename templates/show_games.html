@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+<h1>Stoliki turniejowe</h1>
+<ul>
+{% for obj in object_list %}
+    <li><a href="/game/{{ obj.id }}">{{ obj }}</a></li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

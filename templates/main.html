@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Strona główna {% endblock %}
+
+{% block content %}
+
+    <p class="main-body-div">
+    <a href="add_player/" class="btn btn-default"><button>Nowy Gracz</button></a>
+    <a href="add_tournament/" class="btn btn-default"><button>Nowy Turniej</button></a>
+
+        {% if playerbase %}
+        <p>
+            <h2 style="color: gold">Aktualna baza graczy:</h2>
+                <ul>
+                    {% for player in playerbase %}
+                        <li><a href="/player/{{ player.id }}" style="color: #FFFFFF">{{ player }}</a></li>
+                    {% endfor %}
+                </ul>
+        </p>
+        {% endif %}
+
+        {% if tournaments %}
+            <p>
+                <h2 style="color: gold">Aktualna baza turniejów:</h2>
+                    <ul>
+                        {% for tournament in tournaments %}
+                            <li><a href="/tournament/{{ tournament.id }}" style="color: #FFFFFF">{{ tournament }}</a></li>
+                        {% endfor %}
+                    </ul>
+            </p>
+        {% endif %}
+
+
+
+{% endblock %}
