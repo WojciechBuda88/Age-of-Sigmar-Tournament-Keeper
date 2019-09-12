@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from AoS_app.models import TournamentPlayer, Player, GamePlayer, Tournament
+from AoS_app.models import TournamentPlayer, Player, GamePlayer, Tournament, Army
 
 
 class TournamentPlayerCreateForm(ModelForm):
@@ -26,6 +26,12 @@ class PlayerCreateForm(ModelForm):
 class GamePlayerCreateForm(ModelForm):
     class Meta:
         model = GamePlayer
+        fields = "__all__"
+
+
+class ArmyCreateForm(ModelForm):
+    class Meta:
+        model = Army
         fields = "__all__"
 
 

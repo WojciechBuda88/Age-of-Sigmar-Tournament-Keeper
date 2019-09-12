@@ -41,6 +41,13 @@
     </ul>
     {% endif %}
 
+    {% if armies %}
+    <ul>{% for army in armies %}
+        <li>{{ army }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     {% if tournament_player %}
         <h1 style="color: #FFFFFF">{{ tournament_player }}</h1>
     {% endif %}

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31f81a53-f06f-4569-a534-c8377a01fe64" name="Default Changelist" comment="" />
+    <list default="true" id="31f81a53-f06f-4569-a534-c8377a01fe64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/AoS_Tournament/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AoS_Tournament/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AoS_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/AoS_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AoS_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AoS_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +26,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Q14lieCktXyIEVBudn88RZJJMr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -106,10 +116,22 @@
       <workItem from="1567666644488" duration="25292000" />
       <workItem from="1567701313891" duration="6729000" />
       <workItem from="1568277041981" duration="293000" />
+      <workItem from="1568281480948" duration="1467000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

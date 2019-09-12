@@ -4,7 +4,7 @@ from AoS_app import views
 from django.views.generic.base import TemplateView
 
 from AoS_app.views import TournamentPlayerCreateView, PlayerCreateView, TournamentPlayerEditView, RoundView, \
-    generate_games_for_round, MainView, TournamentCreateView, GameResultView, TournamentResultView
+    generate_games_for_round, MainView, TournamentCreateView, GameResultView, TournamentResultView, ArmyCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('generate_table/<int:round_id>', generate_games_for_round),
     path('round/<int:round_pk>', RoundView.as_view()),
     path('game/<int:id>', GameResultView.as_view()),
-    path('results/<int:pk>', TournamentResultView.as_view())
+    path('results/<int:pk>', TournamentResultView.as_view()),
+    path('add_army/', ArmyCreateView.as_view())
 ]

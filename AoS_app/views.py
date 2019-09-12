@@ -4,9 +4,9 @@ from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic.edit import CreateView, BaseCreateView
 from django.views.generic import ListView, DetailView
-from AoS_app.models import Tournament, Player, Game, TournamentPlayer, GamePlayer, Round
+from AoS_app.models import Tournament, Player, Game, TournamentPlayer, GamePlayer, Round, Army
 from AoS_app.forms import TournamentPlayerCreateForm, PlayerCreateForm, TournamentPlayer, GamePlayerCreateForm, \
-    AddPlayerToTournamentForm, TournamentPlayerEditForm, TournamentCreateForm, GameResultForm
+    AddPlayerToTournamentForm, TournamentPlayerEditForm, TournamentCreateForm, GameResultForm, ArmyCreateForm
 
 
 class TournamentCreateView(View):
@@ -211,6 +211,22 @@ class TournamentResultView(View):
         results = results.exclude(player__nick__contains="Dummy")
         print(results)
         return render(request, "results.html", {"results": results, "pk":pk, "tournament":tournament})
+
+
+class ArmyCreateView(View):
+    def get(self, request):
+        form = ArmyCreateForm()
+        armies = Army.objects.all()
+        return render(request, "forms.html", {"form": form, "armies": armies})
+
+    def post(self, request):
+        form = ArmyCreateForm(request.POST)
+        armies = Army.objects.all()
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            army = Army.objects.create(name=name)
+            army.save()
+        return render(request, "forms.html", {"armies": armies, "form": form})
 
 
 
